@@ -18,6 +18,8 @@
 		7C3EAC2C1F187153003BE78B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EAC2A1F187153003BE78B /* LaunchScreen.storyboard */; };
 		7C3EAC371F187154003BE78B /* DIONISIOi95TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EAC361F187154003BE78B /* DIONISIOi95TestAppTests.swift */; };
 		7C3EAC421F187154003BE78B /* DIONISIOi95TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EAC411F187154003BE78B /* DIONISIOi95TestAppUITests.swift */; };
+		7CEAF1771F19A35D00867F5E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAF1751F19A35D00867F5E /* DetailsViewController.swift */; };
+		7CEAF1781F19A35D00867F5E /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAF1761F19A35D00867F5E /* DetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7C3EAC3D1F187154003BE78B /* DIONISIOi95TestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DIONISIOi95TestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EAC411F187154003BE78B /* DIONISIOi95TestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIONISIOi95TestAppUITests.swift; sourceTree = "<group>"; };
 		7C3EAC431F187154003BE78B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CEAF1751F19A35D00867F5E /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		7CEAF1761F19A35D00867F5E /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				7C3EAC2A1F187153003BE78B /* LaunchScreen.storyboard */,
 				7C3EAC2D1F187153003BE78B /* Info.plist */,
 				7C3EAC251F187153003BE78B /* DIONISIOi95TestApp.xcdatamodeld */,
+				7CEAF1751F19A35D00867F5E /* DetailsViewController.swift */,
+				7CEAF1761F19A35D00867F5E /* DetailsViewController.xib */,
 			);
 			path = DIONISIOi95TestApp;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				7C3EAC2C1F187153003BE78B /* LaunchScreen.storyboard in Resources */,
 				7C3EAC291F187153003BE78B /* Assets.xcassets in Resources */,
 				7C3EAC241F187153003BE78B /* Main.storyboard in Resources */,
+				7CEAF1781F19A35D00867F5E /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +295,7 @@
 				7C3EAC211F187153003BE78B /* ViewController.swift in Sources */,
 				7C14991E1F18DDE20073CEC0 /* HTTPRequests.swift in Sources */,
 				7C1499201F190BA60073CEC0 /* iTunesSearch.swift in Sources */,
+				7CEAF1771F19A35D00867F5E /* DetailsViewController.swift in Sources */,
 				7C14991A1F18DAD10073CEC0 /* Movies.swift in Sources */,
 				7C3EAC1F1F187153003BE78B /* AppDelegate.swift in Sources */,
 			);
