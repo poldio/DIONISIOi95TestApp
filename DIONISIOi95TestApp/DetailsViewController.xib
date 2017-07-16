@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="DIONISIOi95TestApp" customModuleProvider="target">
             <connections>
+                <outlet property="MovieView" destination="zb9-et-f4y" id="HjY-CC-l1t"/>
+                <outlet property="loader" destination="89d-qK-80S" id="QHO-s9-jVN"/>
+                <outlet property="movieDescription" destination="xHr-UR-N40" id="TU1-Li-joB"/>
+                <outlet property="movieGenre" destination="ehc-fd-Xbt" id="H4b-bJ-0wj"/>
+                <outlet property="movieImage" destination="SF8-Pq-1If" id="wLJ-63-BX5"/>
+                <outlet property="movieTitle" destination="nB2-8a-97a" id="Fsn-kC-Zr5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -13,7 +21,83 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zb9-et-f4y">
+                    <rect key="frame" x="0.0" y="31" width="600" height="210"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SF8-Pq-1If">
+                            <rect key="frame" x="-1" y="0.0" width="600" height="210"/>
+                        </imageView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="89d-qK-80S">
+                            <rect key="frame" x="282" y="85" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.44894878830000001" green="0.64829368629999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="SF8-Pq-1If" firstAttribute="centerY" secondItem="zb9-et-f4y" secondAttribute="centerY" id="4VL-wP-sbE"/>
+                        <constraint firstItem="SF8-Pq-1If" firstAttribute="centerX" secondItem="zb9-et-f4y" secondAttribute="centerX" id="5Np-TP-EG3"/>
+                        <constraint firstItem="89d-qK-80S" firstAttribute="centerY" secondItem="SF8-Pq-1If" secondAttribute="centerY" id="8bQ-2n-dYF"/>
+                        <constraint firstItem="89d-qK-80S" firstAttribute="centerX" secondItem="SF8-Pq-1If" secondAttribute="centerX" id="Llj-Mh-LyX"/>
+                        <constraint firstItem="SF8-Pq-1If" firstAttribute="height" secondItem="zb9-et-f4y" secondAttribute="height" id="UBZ-LF-xbp"/>
+                        <constraint firstItem="SF8-Pq-1If" firstAttribute="width" secondItem="zb9-et-f4y" secondAttribute="width" id="mhb-KB-G38"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fga-eM-eXJ">
+                    <rect key="frame" x="0.0" y="239" width="600" height="128"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB2-8a-97a">
+                            <rect key="frame" x="250" y="15" width="101" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-fd-Xbt">
+                            <rect key="frame" x="250" y="44" width="101" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.1323042499" green="0.3535241059" blue="0.63006461339999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="nB2-8a-97a" firstAttribute="centerX" secondItem="fga-eM-eXJ" secondAttribute="centerX" id="F4r-PC-pbZ"/>
+                        <constraint firstItem="nB2-8a-97a" firstAttribute="top" secondItem="fga-eM-eXJ" secondAttribute="top" constant="21" id="FmR-EI-FhR"/>
+                        <constraint firstItem="nB2-8a-97a" firstAttribute="width" secondItem="fga-eM-eXJ" secondAttribute="width" multiplier="0.9" id="HZf-2M-qP0"/>
+                        <constraint firstItem="ehc-fd-Xbt" firstAttribute="width" secondItem="fga-eM-eXJ" secondAttribute="width" multiplier="0.5" id="Q17-XX-DTr"/>
+                        <constraint firstItem="ehc-fd-Xbt" firstAttribute="top" secondItem="nB2-8a-97a" secondAttribute="bottom" constant="5" id="WvG-Wh-ZDk"/>
+                        <constraint firstItem="ehc-fd-Xbt" firstAttribute="centerX" secondItem="fga-eM-eXJ" secondAttribute="centerX" id="axh-nS-5Sz"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xHr-UR-N40">
+                    <rect key="frame" x="180" y="375" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xHr-UR-N40" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.35" id="0h0-c0-qt1"/>
+                <constraint firstItem="xHr-UR-N40" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.9" id="4bG-mA-VPZ"/>
+                <constraint firstAttribute="bottom" secondItem="xHr-UR-N40" secondAttribute="bottom" constant="104" id="ATq-7U-dgA"/>
+                <constraint firstItem="zb9-et-f4y" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="BbO-Hy-LAg"/>
+                <constraint firstItem="zb9-et-f4y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Div-7t-amy"/>
+                <constraint firstItem="xHr-UR-N40" firstAttribute="top" secondItem="fga-eM-eXJ" secondAttribute="bottom" constant="5" id="J9e-M2-5mq"/>
+                <constraint firstItem="fga-eM-eXJ" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="KFB-rz-ABs"/>
+                <constraint firstItem="fga-eM-eXJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WKi-vX-VNi"/>
+                <constraint firstItem="xHr-UR-N40" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Y9D-xc-DE0"/>
+                <constraint firstItem="fga-eM-eXJ" firstAttribute="top" secondItem="SF8-Pq-1If" secondAttribute="bottom" id="b9d-dC-g0w"/>
+                <constraint firstItem="zb9-et-f4y" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="gMJ-QL-YIf"/>
+                <constraint firstItem="fga-eM-eXJ" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="hZl-rK-eTG"/>
+                <constraint firstItem="zb9-et-f4y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nPI-RL-XcE"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ATq-7U-dgA"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="320" y="317"/>
         </view>
     </objects>
 </document>
