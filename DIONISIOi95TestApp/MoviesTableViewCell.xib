@@ -16,34 +16,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="360" height="101"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygc-pJ-X4F">
-                        <rect key="frame" x="22" y="6" width="85" height="90"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DE-S2-kma">
-                        <rect key="frame" x="115" y="8" width="237" height="21"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-2S-XIc">
+                        <rect key="frame" x="100" y="46" width="234" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-2S-XIc">
-                        <rect key="frame" x="115" y="40" width="237" height="53"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygc-pJ-X4F">
+                        <rect key="frame" x="18" y="6" width="72" height="90"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DE-S2-kma">
+                        <rect key="frame" x="100" y="8" width="234" height="23"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.20106463929999999" green="0.3918251062" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="vyz-2S-XIc" firstAttribute="top" secondItem="6DE-S2-kma" secondAttribute="bottom" constant="20" id="L1m-By-0Hw"/>
+                    <constraint firstItem="ygc-pJ-X4F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-2" id="FAh-Ap-rdk"/>
+                    <constraint firstItem="vyz-2S-XIc" firstAttribute="top" secondItem="6DE-S2-kma" secondAttribute="bottom" constant="15" id="L1m-By-0Hw"/>
+                    <constraint firstItem="vyz-2S-XIc" firstAttribute="leading" secondItem="ygc-pJ-X4F" secondAttribute="trailing" constant="10" id="OEG-as-GQU"/>
+                    <constraint firstItem="6DE-S2-kma" firstAttribute="leading" secondItem="ygc-pJ-X4F" secondAttribute="trailing" constant="10" id="PKK-eN-jDc"/>
                     <constraint firstItem="ygc-pJ-X4F" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="QOu-c4-4rN"/>
                     <constraint firstItem="vyz-2S-XIc" firstAttribute="leading" secondItem="ygc-pJ-X4F" secondAttribute="trailing" constant="5" id="QRf-q5-7ZC"/>
                     <constraint firstItem="6DE-S2-kma" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.65" id="Yjd-gL-01b"/>
                     <constraint firstItem="vyz-2S-XIc" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.65" id="Zro-k4-WZD"/>
                     <constraint firstItem="ygc-pJ-X4F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="aba-fo-jme"/>
+                    <constraint firstItem="ygc-pJ-X4F" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="bqY-fU-V0K"/>
+                    <constraint firstItem="ygc-pJ-X4F" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="dHc-e0-5Lb"/>
                     <constraint firstAttribute="topMargin" secondItem="6DE-S2-kma" secondAttribute="top" id="eIR-wu-sev"/>
                     <constraint firstItem="ygc-pJ-X4F" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.9" id="gVs-jP-MeC"/>
+                    <constraint firstItem="ygc-pJ-X4F" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="rXG-mH-gkx"/>
                     <constraint firstItem="ygc-pJ-X4F" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="tiw-Rw-fdB"/>
                     <constraint firstItem="6DE-S2-kma" firstAttribute="leading" secondItem="ygc-pJ-X4F" secondAttribute="trailing" constant="5" id="zSd-3F-1k4"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="QOu-c4-4rN"/>
+                        <exclude reference="aba-fo-jme"/>
+                        <exclude reference="gVs-jP-MeC"/>
+                        <exclude reference="tiw-Rw-fdB"/>
+                        <exclude reference="zSd-3F-1k4"/>
+                        <exclude reference="QRf-q5-7ZC"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="movieDescription" destination="vyz-2S-XIc" id="AE5-q1-fZY"/>

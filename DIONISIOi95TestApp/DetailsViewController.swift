@@ -18,14 +18,20 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieDescription: UITextView!
     @IBOutlet weak var movieGenre: UILabel!
+    @IBOutlet weak var movieActor: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let bookmark = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Bookmarks, target: self, action:#selector(DetailsViewController.bookmark))
+        navigationItem.rightBarButtonItem = bookmark
+
         self.movieTitle.text = self.movie.trackName
-        self.movieGenre.text = self.movie.primaryGenreName
-        self.movieDescription.text = self.movie.longDescription
+        let year = String(self.movie.releaseDate!.characters.prefix(4))
+        let genre = self.movie.primaryGenreName!
+        self.movieGenre.text = "\(year) * \(genre)"
+        self.movieActor.text = self.movie.artistName!
+        self.movieDescription.text = self.movie.longDescription!
         self.loader.startAnimating()
         self.loader.hidden = false
         print("track view url", self.movie.trackViewUrl)
@@ -66,6 +72,11 @@ class DetailsViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view.
+    }
+    
+    func bookmark()
+    {
+        
     }
 
     override func didReceiveMemoryWarning() {

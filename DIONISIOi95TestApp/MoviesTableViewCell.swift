@@ -15,7 +15,6 @@ class MoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var movieDescription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.movieImage.image? = UIImage(contentsOfFile: "default-movie")!
         // Initialization code
     }
 

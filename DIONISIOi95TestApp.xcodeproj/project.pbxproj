@@ -10,6 +10,10 @@
 		7C14991A1F18DAD10073CEC0 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1499191F18DAD10073CEC0 /* Movies.swift */; };
 		7C14991E1F18DDE20073CEC0 /* HTTPRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14991D1F18DDE20073CEC0 /* HTTPRequests.swift */; };
 		7C1499201F190BA60073CEC0 /* iTunesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C14991F1F190BA60073CEC0 /* iTunesSearch.swift */; };
+		7C17E08C1F1B0D980091FA83 /* MoviesTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C17E08A1F1B0D980091FA83 /* MoviesTabBarController.swift */; };
+		7C17E08D1F1B0D980091FA83 /* MoviesTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C17E08B1F1B0D980091FA83 /* MoviesTabBarController.xib */; };
+		7C17E0901F1B0E290091FA83 /* FavouritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C17E08E1F1B0E290091FA83 /* FavouritesTableViewController.swift */; };
+		7C17E0911F1B0E290091FA83 /* FavouritesTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C17E08F1F1B0E290091FA83 /* FavouritesTableViewController.xib */; };
 		7C3EAC1F1F187153003BE78B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EAC1E1F187153003BE78B /* AppDelegate.swift */; };
 		7C3EAC241F187153003BE78B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C3EAC221F187153003BE78B /* Main.storyboard */; };
 		7C3EAC271F187153003BE78B /* DIONISIOi95TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C3EAC251F187153003BE78B /* DIONISIOi95TestApp.xcdatamodeld */; };
@@ -46,6 +50,10 @@
 		7C1499191F18DAD10073CEC0 /* Movies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movies.swift; path = MoviesDataModel/Movies.swift; sourceTree = "<group>"; };
 		7C14991D1F18DDE20073CEC0 /* HTTPRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPRequests.swift; path = HTTPRequests/HTTPRequests.swift; sourceTree = "<group>"; };
 		7C14991F1F190BA60073CEC0 /* iTunesSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iTunesSearch.swift; path = HTTPRequests/iTunesSearch.swift; sourceTree = "<group>"; };
+		7C17E08A1F1B0D980091FA83 /* MoviesTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTabBarController.swift; sourceTree = "<group>"; };
+		7C17E08B1F1B0D980091FA83 /* MoviesTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesTabBarController.xib; sourceTree = "<group>"; };
+		7C17E08E1F1B0E290091FA83 /* FavouritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewController.swift; sourceTree = "<group>"; };
+		7C17E08F1F1B0E290091FA83 /* FavouritesTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouritesTableViewController.xib; sourceTree = "<group>"; };
 		7C3EAC1B1F187152003BE78B /* DIONISIOi95TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIONISIOi95TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3EAC1E1F187153003BE78B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C3EAC231F187153003BE78B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +150,10 @@
 				7CEAF1761F19A35D00867F5E /* DetailsViewController.xib */,
 				7CFD8BE41F1AF139009026AF /* MoviesTableViewController.swift */,
 				7CFD8BE51F1AF139009026AF /* MoviesTableViewController.xib */,
+				7C17E08A1F1B0D980091FA83 /* MoviesTabBarController.swift */,
+				7C17E08B1F1B0D980091FA83 /* MoviesTabBarController.xib */,
+				7C17E08E1F1B0E290091FA83 /* FavouritesTableViewController.swift */,
+				7C17E08F1F1B0E290091FA83 /* FavouritesTableViewController.xib */,
 				7C3EAC281F187153003BE78B /* Assets.xcassets */,
 				7C3EAC2A1F187153003BE78B /* LaunchScreen.storyboard */,
 				7C3EAC2D1F187153003BE78B /* Info.plist */,
@@ -275,7 +287,9 @@
 				7C3EAC2C1F187153003BE78B /* LaunchScreen.storyboard in Resources */,
 				7C810AAD1F1A4B0A0005E1D2 /* MoviesTableViewCell.xib in Resources */,
 				7C3EAC291F187153003BE78B /* Assets.xcassets in Resources */,
+				7C17E0911F1B0E290091FA83 /* FavouritesTableViewController.xib in Resources */,
 				7C3EAC241F187153003BE78B /* Main.storyboard in Resources */,
+				7C17E08D1F1B0D980091FA83 /* MoviesTabBarController.xib in Resources */,
 				7CFD8BE71F1AF139009026AF /* MoviesTableViewController.xib in Resources */,
 				7CEAF1781F19A35D00867F5E /* DetailsViewController.xib in Resources */,
 			);
@@ -302,6 +316,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C17E08C1F1B0D980091FA83 /* MoviesTabBarController.swift in Sources */,
+				7C17E0901F1B0E290091FA83 /* FavouritesTableViewController.swift in Sources */,
 				7C810AAC1F1A4B0A0005E1D2 /* MoviesTableViewCell.swift in Sources */,
 				7C3EAC271F187153003BE78B /* DIONISIOi95TestApp.xcdatamodeld in Sources */,
 				7C14991E1F18DDE20073CEC0 /* HTTPRequests.swift in Sources */,

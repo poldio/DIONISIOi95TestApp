@@ -16,7 +16,9 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         self.tableView.registerNib(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
+        self.tableView.backgroundColor = UIColor(colorLiteralRed: 0.2, green: 0.4, blue: 1, alpha: 1)
         self.tableView.dataSource = self
         self.tableView.delegate = self
 
@@ -124,6 +126,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
             let _image = UIImage(data: string!)
             dispatch_async(dispatch_get_main_queue(), {
                 cell.imageView!.image = _image!
+                tableView.reloadData()
             })
         }
         
