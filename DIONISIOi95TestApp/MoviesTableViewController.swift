@@ -12,10 +12,12 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
     
     private var movies : NSMutableArray!
     private var myTableView: UITableView!
+    var progressIcon : UIActivityIndicatorView!
     lazy var searchBar:UISearchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.loadView()
                 
         self.tableView.registerNib(UINib(nibName: "MoviesTableViewCell", bundle: nil), forCellReuseIdentifier: "MoviesTableViewCell")
         self.tableView.backgroundColor = UIColor(colorLiteralRed: 0.2, green: 0.4, blue: 1, alpha: 1)
@@ -24,7 +26,43 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
 
         self.movies = NSMutableArray()
         self.addSearchBar()
+        self.addAcitivity()
+
+    }
+    
+    func addAcitivity() -> Void
+    {
+        var baseView = UIView()
+        baseView.backgroundColor = UIColor(red: 13/255, green: 44/255, blue: 75/255, alpha: 1)
         
+        self.view.addSubview(baseView)
+        progressIcon = UIActivityIndicatorView()
+        progressIcon.translatesAutoresizingMaskIntoConstraints = false
+        progressIcon.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        view.addSubview(progressIcon)
+        progressIcon.hidden = true
+        
+        var constraints = [NSLayoutConstraint]()
+        constraints.append(NSLayoutConstraint(
+            item: progressIcon,
+            attribute: .CenterX,
+            relatedBy: .Equal,
+            toItem: view,
+            attribute: .CenterX,
+            multiplier: 1,
+            constant: 0)
+        )
+        constraints.append(NSLayoutConstraint(
+            item: progressIcon,
+            attribute: .CenterY,
+            relatedBy: .Equal,
+            toItem: view,
+            attribute: .CenterY,
+            multiplier: 0.25,
+            constant: 0)
+        )
+        
+        view.addConstraints(constraints)
     }
     
     func addSearchBar() -> Void
@@ -44,6 +82,13 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
     
     func searchButton ()
     {
+        
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.progressIcon.startAnimating()
+            self.progressIcon.hidden = false
+        })
+        
         // retrieve movies search results
         let req = HTTPRequests()
         let search = searchBar.text
@@ -62,16 +107,25 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
             //dispatch_async(dispatch_get_main_queue(), {
             let movies = HTTPRequests.convertStringToDictionary(string!)
             print("response: ", string!)
+            
             for (key, value) in movies! {
                 if(key == "results")
                 {
-                    
-                    for var i in (0..<value.count)
+                    if(value.count > 0)
                     {
-                        let par = value.objectAtIndex(i) as! NSDictionary
-                        self.movies.addObject(HTTPRequests.convertMoviesDataModel(par))
-                        
+                        for var i in (0..<value.count)
+                        {
+                            let par = value.objectAtIndex(i) as! NSDictionary
+                            self.movies.addObject(HTTPRequests.convertMoviesDataModel(par))
+                            
+                        }
                     }
+                    else
+                    {
+                        self.progressIcon.stopAnimating()
+                        self.progressIcon.hidden = true
+                    }
+                    
                 }
             }
             // for debugging only
@@ -84,6 +138,8 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
             
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                self.progressIcon.stopAnimating()
+                self.progressIcon.hidden = true
             })
         }
     }
@@ -136,6 +192,7 @@ class MoviesTableViewController: UITableViewController, UISearchBarDelegate{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let newViewController = DetailsViewController()
         newViewController.movie = self.movies.objectAtIndex(indexPath.row) as! Movies
+        newViewController.ifLocal = false
         self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }

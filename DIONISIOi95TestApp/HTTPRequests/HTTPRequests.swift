@@ -68,9 +68,52 @@ class HTTPRequests {
         movie.trackViewUrl = par.objectForKey("trackViewUrl") as? String
         movie.wrapperType = par.objectForKey("wrapperType") as? String
         //movie.trackHdRentalPrice = par.objectForKey("trackHdRentalPrice") as! String
-        //movie.trackId = par.objectForKey("trackId") as! String
+        //movie.trackId = par.objectForKey("trackId") as? String
         //movie.trackRentalPrice = par.objectForKey("trackRentalPrice") as! String
         
         return movie
+    }
+    
+    static func readPropertyList() -> NSArray {
+        let path = NSBundle.mainBundle().pathForResource("Bookmarks", ofType: "plist")!
+        let arr = NSArray(contentsOfFile: path)
+        
+        return arr!
+    }
+    
+    static func readPListFromDocuments() -> NSArray
+    {
+        let filepath = HTTPRequests.applicationDocumentsDirectory().stringByAppendingString("/Bookmarks.plist")
+        let arr = NSArray(contentsOfFile: filepath)
+        
+        return arr!
+    }
+    
+    static func saveToPlist(movie : NSDictionary) -> NSArray
+    {
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.URLByAppendingPathComponent("Bookmarks.plist").path!
+        let fileManager = NSFileManager.defaultManager()
+        var arr : NSMutableArray
+        arr = NSMutableArray()
+
+        if fileManager.fileExistsAtPath(filePath) {
+            print("FILE AVAILABLE \(filePath)")
+            arr.setArray(self.readPListFromDocuments() as [AnyObject])
+            
+        } else {
+            print("FILE NOT AVAILABLE \(filePath)")
+            arr.setArray(self.readPropertyList() as [AnyObject])
+        }
+        
+        arr.addObject(movie)
+        return arr
+    }
+    
+    static func applicationDocumentsDirectory() -> String {
+        let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
+        let basePath = paths.first ?? ""
+        return basePath
     }
 }

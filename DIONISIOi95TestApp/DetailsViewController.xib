@@ -30,7 +30,7 @@
                             <rect key="frame" x="282" y="102" width="37" height="37"/>
                         </activityIndicatorView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SF8-Pq-1If">
-                            <rect key="frame" x="0.0" y="12" width="600" height="216"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.44894878830000001" green="0.64829368629999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,34 +39,35 @@
                         <constraint firstItem="SF8-Pq-1If" firstAttribute="centerX" secondItem="zb9-et-f4y" secondAttribute="centerX" id="5Np-TP-EG3"/>
                         <constraint firstItem="89d-qK-80S" firstAttribute="centerY" secondItem="SF8-Pq-1If" secondAttribute="centerY" id="8bQ-2n-dYF"/>
                         <constraint firstItem="89d-qK-80S" firstAttribute="centerX" secondItem="SF8-Pq-1If" secondAttribute="centerX" id="Llj-Mh-LyX"/>
-                        <constraint firstItem="SF8-Pq-1If" firstAttribute="height" secondItem="zb9-et-f4y" secondAttribute="height" multiplier="0.9" id="UBZ-LF-xbp"/>
+                        <constraint firstItem="SF8-Pq-1If" firstAttribute="height" secondItem="zb9-et-f4y" secondAttribute="height" id="UBZ-LF-xbp"/>
                         <constraint firstItem="SF8-Pq-1If" firstAttribute="width" secondItem="zb9-et-f4y" secondAttribute="width" id="mhb-KB-G38"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-VD-Mrc">
-                    <rect key="frame" x="30" y="383" width="540" height="180"/>
+                    <rect key="frame" x="30" y="395" width="540" height="180"/>
                     <color key="backgroundColor" red="0.1323042499" green="0.3535241059" blue="0.63006461339999997" alpha="1" colorSpace="calibratedRGB"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fga-eM-eXJ">
-                    <rect key="frame" x="0.0" y="288" width="600" height="90"/>
+                    <rect key="frame" x="0.0" y="300" width="600" height="90"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB2-8a-97a">
-                            <rect key="frame" x="30" y="21" width="540" height="24"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                            <rect key="frame" x="30" y="21" width="540" height="28"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehc-fd-Xbt">
-                            <rect key="frame" x="150" y="50" width="300" height="17"/>
+                            <rect key="frame" x="150" y="54" width="300" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AS-Ch-Z61">
-                            <rect key="frame" x="60" y="69" width="480" height="17"/>
+                            <rect key="frame" x="60" y="73" width="480" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
