@@ -67,9 +67,6 @@ class HTTPRequests {
         movie.trackName = par.objectForKey("trackName") as? String
         movie.trackViewUrl = par.objectForKey("trackViewUrl") as? String
         movie.wrapperType = par.objectForKey("wrapperType") as? String
-        //movie.trackHdRentalPrice = par.objectForKey("trackHdRentalPrice") as! String
-        //movie.trackId = par.objectForKey("trackId") as? String
-        //movie.trackRentalPrice = par.objectForKey("trackRentalPrice") as! String
         
         return movie
     }
@@ -83,17 +80,16 @@ class HTTPRequests {
     
     static func readPListFromDocuments() -> NSArray
     {
-        let filepath = HTTPRequests.applicationDocumentsDirectory().stringByAppendingString("/Bookmarks.plist")
-        let arr = NSArray(contentsOfFile: filepath)
+        let filePath = HTTPRequests.getDirectoryPath().URLByAppendingPathComponent("/Bookmarks.plist").path!
+        
+        let arr = NSArray(contentsOfFile: filePath)
         
         return arr!
     }
     
     static func saveToPlist(movie : NSDictionary) -> NSArray
     {
-        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        let filePath = url.URLByAppendingPathComponent("Bookmarks.plist").path!
+        let filePath = HTTPRequests.getDirectoryPath().URLByAppendingPathComponent("/Bookmarks.plist").path!
         let fileManager = NSFileManager.defaultManager()
         var arr : NSMutableArray
         arr = NSMutableArray()
@@ -115,5 +111,20 @@ class HTTPRequests {
         let paths = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)
         let basePath = paths.first ?? ""
         return basePath
+    }
+    
+    static func getDirectoryPath() -> NSURL {
+        let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        return url
+    }
+    
+    static func saveImageDocumentDirectory() -> Void{
+        let fileManager = NSFileManager.defaultManager()
+        let paths = (NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString).stringByAppendingPathComponent("apple.jpg")
+        let image = UIImage(named: "apple.jpg")
+        print(paths)
+        let imageData = UIImageJPEGRepresentation(image!, 0.5)
+        fileManager.createFileAtPath(paths as String, contents: imageData, attributes: nil)
     }
 }

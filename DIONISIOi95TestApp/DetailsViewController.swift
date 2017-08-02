@@ -11,8 +11,8 @@ import UIKit
 class DetailsViewController: UIViewController {
 
     
-    public var movie : Movies!
-    public var ifLocal : Bool!
+    internal var movie : Movies!
+    internal var ifLocal : Bool!
     
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
@@ -95,14 +95,12 @@ class DetailsViewController: UIViewController {
             }
         }
         else
-        {            
-            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-            let destinationPath = documentsPath.stringByAppendingString(self.movie.artworkUrl100!)
-            print("dest \(destinationPath)")
+        {
+            let filePath = HTTPRequests.getDirectoryPath().URLByAppendingPathComponent(self.movie.artworkUrl100!).path!
            
             dispatch_async(dispatch_get_main_queue(), {
                     
-                self.movieImage!.image = UIImage(contentsOfFile: String(UTF8String: self.movie.artworkUrl100!)!)
+                self.movieImage!.image = UIImage(contentsOfFile: filePath)
                 self.loader.stopAnimating()
                 self.loader.hidden = true
             })
@@ -113,9 +111,8 @@ class DetailsViewController: UIViewController {
     
     func bookmark()
     {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        let destinationPathImg = documentsPath.stringByAppendingString("/\(self.movie.trackName).jpg")
-        let destinationPathIco = documentsPath.stringByAppendingString("/\(self.movie.trackName)ico.jpg")
+        let destinationPathImg = HTTPRequests.applicationDocumentsDirectory().stringByAppendingString("/\(self.movie.trackName).jpg") as String
+        let destinationPathIco = HTTPRequests.applicationDocumentsDirectory().stringByAppendingString("/\(self.movie.trackName)ico.jpg") as String
 
         var _movie : NSMutableDictionary
         _movie = NSMutableDictionary()
@@ -124,27 +121,22 @@ class DetailsViewController: UIViewController {
         _movie.setObject(self.movie.releaseDate!, forKey:"year")
         _movie.setObject(self.movie.artistName!, forKey:"actor")
         _movie.setObject(self.movie.longDescription!, forKey:"description")
-        _movie.setObject(destinationPathImg, forKey:"image")
-        _movie.setObject(destinationPathIco, forKey:"imageico")
-
+        _movie.setObject("\(self.movie.trackName).jpg", forKey:"image")
+        _movie.setObject("\(self.movie.trackName)ico.jpg", forKey:"imageico")
         
         let completeMovies = HTTPRequests.saveToPlist(_movie)
-        //let succeed = NSKeyedArchiver.archiveRootObject(completeMovies, toFile: path)
-        
-        print(completeMovies)
-        
+       
         
         let filepath = HTTPRequests.applicationDocumentsDirectory().stringByAppendingString("/Bookmarks.plist")
         completeMovies.writeToFile(filepath, atomically: true)
         
-        print("Does file exist: \(NSFileManager.defaultManager().fileExistsAtPath(filepath)) at path: \(filepath)")
-
-        
+        // save image from memory to document directory 300x300
         UIImageJPEGRepresentation(self.movieImage.image! ,1.0)!.writeToFile(destinationPathImg, atomically: true)
         
         let url: NSURL = NSURL(string: movie.artworkUrl100!)!
         let request = NSMutableURLRequest(URL: url)
         
+        // request image from url and save image from memory to document directory 100x100
         HTTPRequests.httpGetImage(request) { string, error in
             guard error == nil && string != nil else {
                 print(error?.localizedDescription)

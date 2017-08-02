@@ -91,16 +91,21 @@ class FavouritesTableViewController: UITableViewController,UISearchBarDelegate {
         cell.movieTitle.text = self.movies.objectAtIndex(indexPath.row).objectForKey("title") as? String
         cell.movieDescription.text = self.movies.objectAtIndex(indexPath.row).objectForKey("description") as? String
         
-        let ico = self.movies.objectAtIndex(indexPath.row).objectForKey("imageico") as? String
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        let destinationPath = documentsPath.stringByAppendingString(ico!)
-        print("dest \(destinationPath)")
+        var arr : NSDictionary
+        arr = NSDictionary()
+        arr = self.movies.objectAtIndex(indexPath.row) as! NSDictionary
+        let imgIco = arr.objectForKey("imageico") as! String
+        
+        let filePath = HTTPRequests.getDirectoryPath().URLByAppendingPathComponent(imgIco).path!
+        print("dest \(filePath)")
+
         
         dispatch_async(dispatch_get_main_queue(), {
             
-            cell.movieImage!.image = UIImage(contentsOfFile: String(UTF8String: destinationPath)!)
-            self.tableView.reloadData()
-        })
+            cell.movieImage!.image = UIImage(contentsOfFile: String(UTF8String: filePath)!)
+            
+        })   
+        
         
         return cell
     }
@@ -119,7 +124,7 @@ class FavouritesTableViewController: UITableViewController,UISearchBarDelegate {
         movie.primaryGenreName = arr.objectForKey("genre") as? String
         movie.artistName = arr.objectForKey("actor") as? String
         movie.longDescription = arr.objectForKey("description") as? String
-        movie.artworkUrl100 = arr.objectForKey("image") as? String        
+        movie.artworkUrl100 = arr.objectForKey("image") as? String
         
         newViewController.movie = movie
         newViewController.ifLocal = true
